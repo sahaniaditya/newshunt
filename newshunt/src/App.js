@@ -1,12 +1,28 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import LoadingBar from 'react-top-loading-bar';
 import './App.css';
 import Navbar from "./components/Navbar.js";
 import News from './components/News.js';
+
+import { useEffect, useState } from "react";
+
 function App() {
-  return (
+  // let location = useLocation();
+  const [progress,setProgress] = useState(0);
+ 
+  // useEffect(()=>{
+    
+  //   setProgress(progress + 30);
+  // },[progress])
+    return (
 <>
 <BrowserRouter>
 <Navbar/>
+<LoadingBar
+        color='#f11946'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
 <Routes>
 
  <Route path="/" element={<News category={"general"}/>}/>

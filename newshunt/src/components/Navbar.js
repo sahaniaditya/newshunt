@@ -1,10 +1,29 @@
-import React,{useRef, useState} from 'react';
+import React,{useRef, useState,useEffect} from 'react';
 
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link,useLocation } from "react-router-dom";
 import "./Navbar.css";
 function Navbar(){
+    let location = useLocation();
     // const navCont = useRef();
+    const [active,setActive] = useState(1);
     const [toggle,setToggle] = useState(1);
+    useEffect(()=>{
+        if(location.pathname === "/")
+         setActive(1);
+        else if(location.pathname === "/sports") 
+         setActive(2);
+        else if(location.pathname === "/entertainment") 
+         setActive(3);
+        else if(location.pathname === "/business") 
+         setActive(4);
+        else if(location.pathname === "/science") 
+         setActive(5);
+        else if(location.pathname === "/health") 
+         setActive(6);
+         else
+          setActive(7);
+
+    },[location]);
     const navSect = useRef();
     const handleClick = () =>{
         
@@ -25,13 +44,13 @@ function Navbar(){
            </div> 
 
             <div ref={navSect} className="nav-right-section">
-            <div className='nav nav-general'><Link  style={{color : "grey",textDecoration : "none"}} to="/">General</Link></div>
-            <div className='nav nav-sports'><Link style={{color : "grey",textDecoration : "none"}} to="/sports">Sports</Link></div>
-            <div className='nav nav-entertainment'><Link style={{color : "grey",textDecoration : "none"}} to="/entertainment">Entertainment</Link></div>
-            <div className='nav nav-business'><Link style={{color : "grey",textDecoration : "none"}} to="/business">Business</Link></div>
-            <div className='nav nav-science'><Link style={{color : "grey",textDecoration : "none"}} to="/science">Science</Link></div>
-            <div className='nav nav-health'><Link style={{color : "grey",textDecoration : "none"}} to="/health">Health</Link></div>
-            <div className='nav nav-technology'><Link style={{color : "grey",textDecoration : "none"}} to="/technology">Technology</Link></div>
+            <div className='nav nav-general'><Link  style={(active === 1) ? {color : "lightgrey",textDecoration : "none"} : {color : "grey",textDecoration : "none"}} to="/">General</Link></div>
+            <div className='nav nav-sports'><Link style={(active === 2) ? {color : "lightgrey",textDecoration : "none"} : {color : "grey",textDecoration : "none"}} to="/sports">Sports</Link></div>
+            <div className='nav nav-entertainment'><Link style={(active === 3) ? {color : "lightgrey",textDecoration : "none"} : {color : "grey",textDecoration : "none"}} to="/entertainment">Entertainment</Link></div>
+            <div className='nav nav-business'><Link style={(active === 4) ? {color : "lightgrey",textDecoration : "none"} : {color : "grey",textDecoration : "none"}} to="/business">Business</Link></div>
+            <div className='nav nav-science'><Link style={(active === 5) ? {color : "lightgrey",textDecoration : "none"} : {color : "grey",textDecoration : "none"}} to="/science">Science</Link></div>
+            <div className='nav nav-health'><Link style={(active === 6) ? {color : "lightgrey",textDecoration : "none"} : {color : "grey",textDecoration : "none"}} to="/health">Health</Link></div>
+            <div className='nav nav-technology'><Link style={(active === 7) ? {color : "lightgrey",textDecoration : "none"} : {color : "grey",textDecoration : "none"}} to="/technology">Technology</Link></div>
 
             </div>
             

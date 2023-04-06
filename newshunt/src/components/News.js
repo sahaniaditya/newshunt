@@ -13,13 +13,13 @@ function News(props){
             const newsData = await fetch(link);
              const data = await newsData.json();
              setArticles(data.articles);
-            //  console.log(articles);
+            // console.log("Entered");
         
             
         }
         fetchData();
         
-    },[]);
+    },[props]);
     
     return (
         <>
