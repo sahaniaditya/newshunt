@@ -1,5 +1,26 @@
 .news-container{
-    width: 100%;
-    
+    width : 100%;
+    margin-left :auto;
+    margin-right: auto;
     margin-top : 0;
 }
+.footer-container{
+    position : fixed;
+    background-color: #36454F;
+    display : flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    bottom : 0;
+    left : 0;
+    right : 0;
+    
+    width: 100%;
+    padding : 1px;
+
+  }
+  .footer-container .btn button{
+    padding : 2px;
+    font-size : 150%;
+  }
+  

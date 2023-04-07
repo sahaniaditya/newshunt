@@ -1,6 +1,6 @@
 :root{
     --nav-background-color :#36454F ;
-    --nav-font-size : 150%;
+    --nav-font-size : 200%;
     --nav-color : white;
     --nav-section-margin : 5px;
 
@@ -16,6 +16,7 @@
     margin : 0;
     color : var(--nav-color);
 
+
 }
 .nav-left-section{
     display : flex;
@@ -28,6 +29,8 @@
 }
 .nav-header{
     flex-grow : 1;
+    font-family: Raleway;
+    font-weight: bolder;
 }
 .nav-menu-icon{
     padding : 2px;
@@ -52,19 +55,17 @@
     text-decoration: none;
 }
 /*applying media queries*/
-@media only screen and (min-width : 786px){
+@media only screen and (min-width : 1100px){
     .navbar-container{
         display : flex;
         flex-direction : row;
     }
-    .nav-mode{
-        display : block;
-    }
+    
     .nav-right-section{
         display : flex;
         flex-direction: row;
     }
-    .nav-about{
+    .nav-right-section .nav{
         display : block;
     }
     .nav-menu-icon{

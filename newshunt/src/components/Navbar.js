@@ -4,6 +4,7 @@ import { Outlet, Link,useLocation } from "react-router-dom";
 import "./Navbar.css";
 function Navbar(){
     let location = useLocation();
+     const [width,setWidth] = useState(window.innerWidth);
     // const navCont = useRef();
     const [active,setActive] = useState(1);
     const [toggle,setToggle] = useState(1);
@@ -35,6 +36,9 @@ function Navbar(){
        setToggle((toggle === 0)  ? 1 : 0);
        
     }
+    setInterval(()=>{
+        setWidth(window.innerWidth);
+    },100);
     return (
         <>
         <div className='navbar-container'>
@@ -43,7 +47,7 @@ function Navbar(){
             <div className='nav-menu-icon'><i onClick={handleClick} className="fa-solid fa-bars"></i></div>
            </div> 
 
-            <div ref={navSect} className="nav-right-section">
+            <div ref={navSect} style={(width > 1100) ? {display : "flex"} : {display : "none"}} className="nav-right-section">
             <div className='nav nav-general'><Link  style={(active === 1) ? {color : "lightgrey",textDecoration : "none"} : {color : "grey",textDecoration : "none"}} to="/">General</Link></div>
             <div className='nav nav-sports'><Link style={(active === 2) ? {color : "lightgrey",textDecoration : "none"} : {color : "grey",textDecoration : "none"}} to="/sports">Sports</Link></div>
             <div className='nav nav-entertainment'><Link style={(active === 3) ? {color : "lightgrey",textDecoration : "none"} : {color : "grey",textDecoration : "none"}} to="/entertainment">Entertainment</Link></div>

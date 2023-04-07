@@ -1,23 +1,28 @@
 .card-container{
     width : 700px;
     height : 580px;
+    max-width: 700px;
+    max-height: 580px;
     border : 3.5px solid grey;
-    box-shadow: 5px 2px 4px lightgrey;
+    box-shadow: 3px 3px 4px lightgrey;
     box-sizing: border-box;
     margin-left :auto;
     margin-right: auto;
     border-radius: 5px;
     background-color: white;
     margin-top : 10px;
+    font-family: Raleway;
 }
 .card-title{
     width: 100%;
     box-sizing: border-box;
     padding : 4px;
-    font-weight: bold;
+    font-weight: bolder;
+    font-family : Raleway;
 }
 .card-image{
     width: 100%;
+    height:400px;
     box-sizing: border-box;
     height : 400px;
     
@@ -32,16 +37,23 @@
     width: 100%;
     box-sizing: border-box;
     padding : 4px;
+    font-weight: bold;
 }
 .card-link{
     box-sizing: border-box;
     padding : 4px;
+    font-weight: bolder;
 
 }
 @media only screen and (min-width : 1600px){
     .card-container{
+        max-width: 700px;
+        min-height: 580px;
+        width : 700px;
+        height : 580px;
         float : left;
         margin-left : 10px;
-        margin-right: unset;
+        margin-right: 1px;
+       
     }
 }
