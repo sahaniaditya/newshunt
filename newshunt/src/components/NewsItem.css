@@ -1,12 +1,13 @@
 .card-container{
     width : 700px;
+    display : block;
     height : 580px;
     max-width: 700px;
     max-height: 580px;
     border : 3.5px solid grey;
     box-shadow: 3px 3px 4px lightgrey;
     box-sizing: border-box;
-    margin-left :auto;
+    margin-left : auto;
     margin-right: auto;
     border-radius: 5px;
     background-color: white;
@@ -45,13 +46,21 @@
     font-weight: bolder;
 
 }
-@media only screen and (min-width : 1600px){
+@media only screen and (max-width : 1450px){
+    .card-container{
+        margin-left: auto;
+        margin-right : auto;
+    }
+}
+@media only screen and (min-width : 1450px){
     .card-container{
         max-width: 700px;
-        min-height: 580px;
+        max-height: 580px;
+       
         width : 700px;
         height : 580px;
         float : left;
+        display : block;
         margin-left : 10px;
         margin-right: 1px;
        
